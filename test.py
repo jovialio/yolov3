@@ -98,6 +98,9 @@ def test(cfg,
 
             # Run NMS
             t = torch_utils.time_synchronized()
+            # start1 = time.time()
+            # torch.from_numpy(np.arange(1)).float().to(device)
+            # print("create numpy to gpu", time.time() - start1)
             output = non_max_suppression(inf_out, conf_thres=conf_thres, iou_thres=iou_thres, multi_label=multi_label)
             t1 += torch_utils.time_synchronized() - t
 
